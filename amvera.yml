@@ -14,7 +14,6 @@ run:
   scriptName: bot.js
   scriptArguments: null
   nodeArguments: null
-  command: npm run start
+  command: npm start
   persistenceMount: /data
   containerPort: 80
-  servicePort: 80
