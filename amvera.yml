@@ -11,7 +11,7 @@ build:
   artifacts:
     '*': /
 run:
-  scriptName: bot.js
+  scriptName: ""
   scriptArguments: null
   nodeArguments: null
   command: npm start
