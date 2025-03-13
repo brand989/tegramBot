@@ -67,6 +67,20 @@ bot.on('text', async (ctx) => {
     
 });
 
+
+// Обработка фото
+bot.on('photo', (ctx) => {
+  const photo = ctx.message.photo[ctx.message.photo.length - 1]; // Получаем наибольшее качество фото
+  const fileId = photo.file_id;
+  
+  ctx.reply('Вы отправили фото!');
+
+  // Отправить фото обратно пользователю (опционально)
+  ctx.replyWithPhoto(fileId);
+});
+
+
+
 bot.launch();
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
