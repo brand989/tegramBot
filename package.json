@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bot.js"
+    "start": "node dist/bot.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,9 @@
     "telegraf-session-local": "^2.1.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@types/axios": "^0.9.36",
+    "@types/node": "^22.13.10",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.8.2"
   }
 }
