@@ -92,7 +92,7 @@ function checkUserLimit(userId: number, sessionData?: { count: number; lastReset
       };
     }
   
-    if (Date.now() - sessionData.lastReset >= 86400000) {
+    if (Date.now() - sessionData.lastReset >= 600000) {
       sessionData.count = 0;
       sessionData.lastReset = Date.now();
     }
@@ -129,6 +129,7 @@ bot.on('message', async (ctx: MyContext) => {
     }
   
     const userId = ctx.from?.id!;
+    console.log("userId", userId)
     const userData = checkUserLimit(userId, ctx.session.messageData?.[userId]);
   
     if (!ctx.session.messageData) ctx.session.messageData = {};

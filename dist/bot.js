@@ -52,7 +52,7 @@ function checkUserLimit(userId, sessionData) {
             lastReset: Date.now(),
         };
     }
-    if (Date.now() - sessionData.lastReset >= 86400000) {
+    if (Date.now() - sessionData.lastReset >= 300000) {
         sessionData.count = 0;
         sessionData.lastReset = Date.now();
     }
@@ -77,6 +77,7 @@ bot.on('message', async (ctx) => {
         return ctx.reply("Сообщение отсутствует.");
     }
     const userId = ctx.from?.id;
+    console.log("userId", userId);
     const userData = checkUserLimit(userId, ctx.session.messageData?.[userId]);
     if (!ctx.session.messageData)
         ctx.session.messageData = {};
